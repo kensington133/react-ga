@@ -155,6 +155,23 @@ var ReactGA = {
   },
 
   /**
+   * screenview:
+   * Basic GA screenview tracking
+   * @param  {Object} fieldsObject - a field/value pair or a group of field/value pairs on the tracker
+   */
+  screenview: function (fieldsObject) {
+
+    if (typeof ga === 'function') {
+      ga('send', 'screenview', fieldsObject);
+
+      if (_debug) {
+        log('called ga(\'send\', \'screenview\', fieldsObject);');
+        log('with path: ' + JSON.stringify(fieldsObject));
+      }
+    }
+  },
+
+  /**
    * modalview:
    * a proxy to basic GA pageview tracking to consistently track
    * modal views that are an equivalent UX to a traditional pageview

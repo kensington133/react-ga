@@ -130,6 +130,24 @@ ReactGA.pageview('/about/contact-us');
 
 See example above for use with `react-router`.
 
+#### ReactGA.screenview(fieldsObject)
+
+###### Example
+
+```js
+ReactGA.screenview({
+    screenName: 'Home',
+    appName: 'Super App'
+});
+```
+
+|Value|Notes|
+|------|-----|
+|fieldsObject|`object`. Used to pass params to the `ga.send` method |
+
+For more detailed information about the `screenview` send method please refer to https://developers.google.com/analytics/devguides/collection/analyticsjs/screens
+
+
 #### ReactGA.modalview(modalName)
 
 A modal view is often an equivalent to a pageview in our UX, but without a change in URL that would record a standard GA pageview. For example, a 'contact us' modal may be accessible from any page in a site, even if we don't have a standalone 'contact us' page on its own URL. In this scenario, the modalview should be recorded using this function.
